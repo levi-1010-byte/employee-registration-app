@@ -1,0 +1,34 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+
+<form class="mt-4 registration-form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="employee.name" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department" [(ngModel)]="employee.department" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="employee.email" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="position">Position:</label>
+    <input type="text" id="position" name="position" [(ngModel)]="employee.position" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date" [(ngModel)]="employee.start_date" class="form-control" required>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Register</button>
+  </div>
+  
+  <div *ngIf="warningMessage" class="error-line mt-2 text-center text-danger">
+    {{ warningMessage }}
+  </div>
+</form>

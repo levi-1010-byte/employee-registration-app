@@ -1,0 +1,15 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="admin">Admin ID:</label>
+      <input type="text" id="admin" [(ngModel)]="admin" name="admin" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Admin Login</button>
+  </form>
+  <button class="btn btn-secondary" (click)="guestLogin()">Guest Login</button>
+</div>

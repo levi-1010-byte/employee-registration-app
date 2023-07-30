@@ -1,0 +1,42 @@
+<div class="card border-primary" *ngIf="!isEditMode" (click)="toggleDetails()">
+  <div class="card-body">
+    <h5 class="card-title text-primary">{{ employees.name }}</h5>
+    <p class="card-text">
+      <strong>Department:</strong> {{ employees.department }}
+    </p>
+  </div>
+  <div *ngIf="showDetails" class="additional-details">
+    <p><strong>Email:</strong>  {{ employees.email }}</p>
+    <p><strong>Position:</strong>  {{ employees.position }}</p>
+    <p><strong>Start Date:</strong>  {{getFormattedDate(employees.start_date)}}</p>
+  </div>
+  <div>
+    <button (click)="toggleEditMode()" class="btn btn-primary">Update</button>
+  </div>
+</div>
+
+<div class="card border-info" *ngIf="isEditMode">
+  <div class="card-body">
+    <h5 class="card-title">
+      <input [(ngModel)]="editedEmployee.name" class="form-control" />
+    </h5>
+    <p class="card-text">
+      <strong>Department:</strong>
+      <input [(ngModel)]="editedEmployee.department" class="form-control" />
+    </p>
+    <p class="card-text">
+      <strong>Email:</strong>
+      <input [(ngModel)]="editedEmployee.email" class="form-control" />
+    </p>
+    <p class="card-text">
+      <strong>Position:</strong>
+      <input [(ngModel)]="editedEmployee.position" class="form-control" />
+    </p>
+    <p class="card-text">
+      <strong>Start Date:</strong>
+      <input [(ngModel)]="editedEmployee.start_date" class="form-control" />
+    </p>
+    <button (click)="updateEmployee()" class="btn btn-success">Save</button>
+    <button (click)="toggleEditMode()" class="btn btn-danger">Cancel</button>
+  </div>
+</div>

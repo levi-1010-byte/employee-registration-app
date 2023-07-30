@@ -1,0 +1,23 @@
+
+.registration-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .registration-form .form-group label {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .registration-form .btn-primary {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .registration-form .error-line {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
