@@ -37,7 +37,7 @@ function createEmployeeTable() {
     }
 
   
-    client.end();
+   
   });
 }
 
