@@ -9,7 +9,20 @@ port=process.env.PORT;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
+const allowedOrigins = [
+    'https://6507f7c208aa4138f7900d6a--majestic-kangaroo-904e17.netlify.app/', // Replace with your Netlify app address
+  ];
+  
+  const corsOptions = {
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  };
+  app.use(cors(corsOptions));
 
 app.use('/api', routes);
   
