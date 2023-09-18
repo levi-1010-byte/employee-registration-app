@@ -10,7 +10,7 @@ port=process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
-    'https://6507f7c208aa4138f7900d6a--majestic-kangaroo-904e17.netlify.app/', // Replace with your Netlify app address
+    'https://majestic-kangaroo-904e17.netlify.app', 
   ];
   
   const corsOptions = {
