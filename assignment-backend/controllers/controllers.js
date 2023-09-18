@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 
 const getallEmployees = async (req, res) => {
     try {
-      const result = await db.query('SELECT * FROM "employeeData"."employeeDatatable"');
+      const result = await db.query('SELECT * FROM "employeeDatatable"');
       res.json(result.rows);
     } catch (error) {
       console.error('Error fetching employees:', error);
@@ -27,7 +27,7 @@ const getallEmployees = async (req, res) => {
   
       // Perform data validation if needed
   
-      const query = 'INSERT INTO "employeeData"."employeeDatatable" (name, email, department, position, start_date) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+      const query = 'INSERT INTO "employeeDatatable" (name, email, department, position, start_date) VALUES ($1, $2, $3, $4, $5) RETURNING *';
       const values = [name, email, department, position, start_date];
   
       const result = await db.query(query, values);
@@ -50,7 +50,7 @@ const getallEmployees = async (req, res) => {
       
       const id=req.params.id;
   
-      const query = 'UPDATE "employeeData"."employeeDatatable" SET name = $2, department = $3, email = $4, position = $5, start_date = $6 WHERE id = $1 RETURNING *';
+      const query = 'UPDATE "employeeDatatable" SET name = $2, department = $3, email = $4, position = $5, start_date = $6 WHERE id = $1 RETURNING *';
       const values = [ id,name, department, email, position, start_date];
   
       const result = await db.query(query, values);
@@ -72,7 +72,7 @@ const getallEmployees = async (req, res) => {
       const id =  req.params.id;
      
   
-      const query = 'DELETE FROM "employeeData"."employeeDatatable" WHERE id = $1 RETURNING *';
+      const query = 'DELETE FROM "employeeDatatable" WHERE id = $1 RETURNING *';
       const values = [id];
       
   
