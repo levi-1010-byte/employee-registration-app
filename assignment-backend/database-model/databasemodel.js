@@ -19,7 +19,7 @@ client.connect((err) => {
 
 function createEmployeeTable() {
   const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS employeeDatatable (
+    CREATE TABLE IF NOT EXISTS employeeData.employeeDatatable (
       id SERIAL PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
